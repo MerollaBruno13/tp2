@@ -1,0 +1,225 @@
+/* Correcciones:
+1) Puse el h1 .nombre con position relative para centrarlo con left 50% y transform translate -50%
+2) Le podes cambiar el ancho con width si es block, no hace falta cambiarlo a inline-block
+3) Cuando se aplica más de un transform distinto hay que agregarlo todo en la misma línea, fijate en los keyframes como lo hice
+Ejemplo:  transform: translateX(720px) rotate(0deg) scale(1);
+4) Agregué "overflow: hidden" al body. Esta propiedad elimina el scroll de la derecha, 
+lo que causaba una imperfección en la animación cuando se ajustaba a la pantalla. */
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: cambiar-fondos 30s linear;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+}
+
+.fotobruno {
+    transform: translateX(720px) rotate(0deg) scale(1);
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    animation: rotaryzoom 5s ease;
+}
+    /* transform: translateY(150px); */
+    /* profe me arranca la animacion del lado izsquierdo
+    y no tengo idea de como resolverlo */
+
+.nombre {
+    font-size: 40px;
+    color: black;
+    padding: 10px;
+    background-color: aqua;
+    margin-top: 2%;
+    text-align: center;
+    animation: entrararriba 3s ease;
+    width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+    /* transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 2.71) 0s; */
+    /* position: relative; */
+    /* display: inline-block;  */
+    /* profe como hago para que se achique el bloque y 
+    no se me deforme el contenido? */
+
+
+.nombre:hover {
+    color: blueviolet;
+    font-size: 50px;
+    transform: scale(1.025);
+    border: solid;  
+    transform: translateX(-50%);
+}
+
+.descripcion {
+    font-size: 30px;
+    text-align: center;
+    margin-top: -10px;
+    color: chartreuse;
+    background-color: black;
+    animation: entrarizquierda 3s ease;
+}
+
+.descripcion:hover {
+    color: blueviolet;
+    font-size: 40px;
+    border-radius: 35px;
+    background-color: brown;
+    transition-property: color;
+    transition-duration: 2s;
+}
+
+.iconos {
+    text-align: center;
+    margin-top: 20px;
+    animation: entrarderecha 3s ease;
+}
+
+.iconos img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.links {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+    animation: entrarabajo 3s ease;
+}
+
+.boton {
+    background-color: blueviolet;
+    height: 50px;
+    width: 25vw;
+    margin: 0 auto 10px;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px) scale(1.04);
+}
+
+.img-boton {
+    left: 5px;
+    top: 50px;
+    transform: translateY(-110%);
+    width: 41px;
+    height: 41px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.compartir {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes cambiar-fondos {
+    0% {
+        background-image: url(Imagenes/FOTO1.png);
+    }
+
+    10% {
+        background-image: url(Imagenes/FONDO15.jpg);
+    }
+
+    20% {
+        background-image: url(Imagenes/imagenfondo.png);
+    }
+
+    30% {
+        background-image: url(Imagenes/FONDO14.jpg);
+    }
+
+    40% {
+        background-image: url(Imagenes/FOTO5.png);
+    }
+
+    50% {
+        background-image: url(Imagenes/FONDO13.jpg);
+    }
+
+    60% {
+        background-image: url(Imagenes/FOTO4.png);
+    }
+
+    70% {
+        background-image: url(Imagenes/FONDO12.jpg);
+    }
+
+    80% {
+        background-image: url(Imagenes/FOTO3.png);
+    }
+
+    90% {
+        background-image: url(Imagenes/FONDO11.jpg);
+    }
+
+    100% {
+        background-image: url(Imagenes/FOTO2.png);
+    }
+}
+
+@keyframes entrarizquierda {
+    from {
+        transform: translateX(-200%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes entrararriba {
+    from {
+        transform: translateY(-200%) translateX(-50%);
+    }
+
+    to {
+        transform: translateY(0%) translateX(-50%);
+    }
+}
+
+@keyframes entrarderecha {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes entrarabajo {
+    from {
+        transform: translateY(200%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes rotaryzoom {
+    0% {
+        transform: translateX(720px) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translateX(720px) rotate(180deg) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(720px) rotate(360deg) scale(1);
+    }
