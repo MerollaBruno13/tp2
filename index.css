@@ -1,0 +1,275 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: pink;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; 
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    color: #FFEB3B;
+    background-color: pink;
+}
+
+.publicidadanimada img, 
+.publicidadanimada2 img, 
+.publicidadanimada3 img {
+    width: 100%;
+    height: 200px;
+    border-radius: 25px;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #FFEB3B;
+    border-radius: 25px;
+    background-color: #FF5A33;
+    display: inline-block; 
+    padding: 10px 20px; 
+    text-align: center;
+    animation: infinite 1s pulse;
+}
+
+.act {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #FFEB3B; 
+    transition: transform 0.3s ease;
+    background-color: #FF5A33;
+    cursor: pointer;
+}
+
+.act:hover {
+    transform: translateY(-2px) scale(1.04);
+    background-color: #333;
+    color: #FFEB3B;
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #FFEB3B;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.item1 {
+    grid-column: span 3;
+    text-align: center;
+    background-color: #FF5A33;
+    padding: 20px;
+    color: white;
+    background-image: url(imagenes/playa3.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    display: flex;
+    align-items: center; 
+    justify-content: space-around; 
+}
+
+.item1 img {
+    width: 100px; 
+    height: 100px; 
+}
+
+.item4, .item6, .item7, .item9, .item10, .item12 {
+    text-align: center;
+    padding: 10px;
+    background-color: #44803F;
+    border-radius: 10px;
+}
+
+.iconos2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.iconos2 img {
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+}
+.item5 img {
+    width: 100%; 
+    height:455px;
+    object-fit: cover;
+    border-radius: 25px;
+
+}
+
+ .item11 img {
+    width: 100%; 
+    height:430px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+.item8 img {
+    width: 100%;
+    height:430px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.item13 {
+    grid-column: span 3;
+    background-color: #44803F; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    color: #FFEB3B;
+}
+
+.terms, .privacy {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    padding: 10px;
+    margin-left: 55px;
+}
+
+.item13 h2 {
+    color: #FFEB3B;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif; 
+    margin-bottom: 10px;
+    background-color: #FF5A33;
+    border-radius: 25px;
+}
+
+.item13 p {
+    text-align: justify;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+.formulario {
+    display: inline-block;
+     justify-content: center;
+     width: 20%;
+     
+     border-radius: 25px;
+     transition: transform 0.3s ease;
+}
+.formulario:hover {
+    transform: translateY(-2px) scale(1.0);
+}
+.formularioA {
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    background-color: crimson;
+    color: #FFEB3B;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+.formularioA:hover {
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Consultas de medios para responsive design */
+@media (max-width: 780px) {
+    .grid-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .act {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .iconos2 img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .item1 img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item5 img {
+        width: 97vw;
+        height: auto;
+    }
+
+    .publicidadanimada img, 
+    .publicidadanimada2 img, 
+    .publicidadanimada3 img {
+        display: none !important;
+        width: 90vw; 
+
+    }
+
+    .grid-container {
+        display: block;
+    }
+
+    .item4, .item5, .item6, .item7  {
+        width: 95vw; 
+        display: block;
+    }
+  .item13, .item14, .item15 {
+  width: 92vw;
+  justify-content: space-between;
+  display: flex;
+
+    
+  }
+}
+@media (max-width: 1024px) {
+    .grid-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .act {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .iconos2 img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .item1 img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item5 img {
+        width: 97vw;
+        height: auto;
+    }
+
+    .publicidadanimada img, 
+    .publicidadanimada2 img, 
+    .publicidadanimada3 img {
+        display: none !important;
+        width: 90vw; 
+
+    }
+
+    .grid-container {
+        display: block;
+    }
+
+    .item4, .item5, .item6, .item7  {
+        width: 95vw; 
+        display: block;
+    }
+}
